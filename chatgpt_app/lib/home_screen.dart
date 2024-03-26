@@ -1,6 +1,7 @@
 import 'package:chatgpt_app/chat_widget.dart';
 import 'package:chatgpt_app/constants.dart';
-import 'package:chatgpt_app/services.dart';
+import 'package:chatgpt_app/services/api_services.dart';
+import 'package:chatgpt_app/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -92,7 +93,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          try {
+                            await ApiService.getModels();
+                          } catch (error) {
+                            print("error $error");
+                          }
+                        },
                         icon: const Icon(
                           Icons.send,
                           color: Colors.white,

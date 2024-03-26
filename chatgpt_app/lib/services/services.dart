@@ -2,7 +2,7 @@ import 'package:chatgpt_app/drop_down.dart';
 import 'package:chatgpt_app/text_widget.dart';
 import 'package:flutter/material.dart';
 
-import 'constants.dart';
+import '../constants.dart';
 
 class Services {
   static Future<void> showModalSheet({required BuildContext context}) async {
